@@ -28,8 +28,8 @@ const Navbar = () => {
           >
             {" "}
             <Image
-              src="/public/images/logo.png"
-              alt="FitLog"
+              src="/images/logo.png"
+              alt={"FitLog Logo"}
               width={120}
               height={40}
               className="h-auto w-24 sm:w-28"

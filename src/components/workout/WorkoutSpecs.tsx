@@ -4,38 +4,18 @@ interface WorkoutSpecsProps {
   workout: IWorkout;
 }
 
-const WorkoutSpecs = ({
-  workout,
-}: WorkoutSpecsProps) => {
+const WorkoutSpecs = ({ workout }: WorkoutSpecsProps) => {
   const specs = [
-    {
-      label: "Equipment",
-      value: workout.equipment,
-    },
-    {
-      label: "Difficulty",
-      value: workout.difficulty,
-    },
-    {
-      label: "Sets",
-      value: workout.sets,
-    },
-    {
-      label: "Reps",
-      value: workout.reps,
-    },
-    {
-      label: "Duration",
-      value: `${workout.duration} min`,
-    },
+    { label: "Equipment", value: workout.equipment },
+    { label: "Difficulty", value: workout.difficulty },
+    { label: "Sets", value: workout.sets },
+    { label: "Reps", value: workout.reps },
+    { label: "Duration", value: `${workout.duration} min` },
     {
       label: "Calories",
       value: `${workout.caloriesBurned} kcal`,
     },
-    {
-      label: "Rating",
-      value: workout.rating,
-    },
+    { label: "Rating", value: workout.rating },
   ];
 
   return (
