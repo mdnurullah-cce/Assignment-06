@@ -10,9 +10,8 @@ The project follows a dark, modern gym-focused design with a bright lime accent 
 
 ## 🚀 Live Demo
 
-- **Live Website:** Add your Vercel/Netlify deployment link here
-- **GitHub Repository:** Add your GitHub repository link here
-
+- **Live Website:** "Given in the future"
+- **GitHub Repository:** "Given in the future"
 ---
 
 ## 📌 Project Overview
