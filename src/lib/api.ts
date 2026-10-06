@@ -1,6 +1,7 @@
 import type { IWorkout } from "@/types/workout";
 
-const API_URL = "https://api.abcz.workers.dev/api/fitlog";
+// const API_URL = "https://api.abcz.workers.dev/api/fitlog";
+const API_URL = "/data.json";
 
 export const getWorkouts = async (): Promise<IWorkout[]> => {
   const response = await fetch(API_URL, {
