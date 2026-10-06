@@ -215,21 +215,21 @@ FitLog uses the following workout API:
 
 ### Get all workouts
 
-```text
+
 GET https://api.abcz.workers.dev/api/fitlog
-```
+
 
 ### Get a single workout
 
-```text
+
 GET https://api.abcz.workers.dev/api/fitlog/:id
-```
+
 
 Example:
 
-```text
+
 https://api.abcz.workers.dev/api/fitlog/1
-```
+
 
 ---
 
@@ -237,7 +237,7 @@ https://api.abcz.workers.dev/api/fitlog/1
 
 The application uses the following TypeScript interface:
 
-```ts
+
 export interface IWorkout {
   id: number;
   name: string;
@@ -253,13 +253,13 @@ export interface IWorkout {
   description: string;
   instructions: string[];
 }
-```
+
 
 ---
 
 ## 📁 Project Structure
 
-```text
+
 fitlog/
 │
 ├── public/
@@ -327,7 +327,7 @@ fitlog/
 ├── postcss.config.mjs
 ├── README.md
 └── tsconfig.json
-```
+
 
 ---
 
@@ -337,26 +337,26 @@ The application is divided into reusable components.
 
 ### Layout Components
 
-```text
+
 Navbar
 Footer
-```
+
 
 These components are shared across the application.
 
 ### Home Components
 
-```text
+
 Hero
 Library
 WorkoutGrid
 WorkoutCard
 SortDropdown
-```
+
 
 The home page follows this structure:
 
-```text
+
 Home Page
 │
 ├── Hero
@@ -368,27 +368,27 @@ Home Page
         ├── SortDropdown
         │
         └── WorkoutCard
-```
+
 
 ### Workout Components
 
-```text
+
 WorkoutDetails
 ├── WorkoutSpecs
 ├── WorkoutInstructions
 └── WorkoutActions
-```
+
 
 ### My Plan Components
 
-```text
+
 My Plan
 │
 ├── PlanHeader
 ├── MetricsSummary
 ├── PlannedWorkoutCard
 └── EmptyPlan
-```
+
 
 ---
 
@@ -398,20 +398,20 @@ FitLog uses **React Context API** for application-wide workout state.
 
 The main provider is:
 
-```text
+
 FitLogProvider
-```
+
 
 It manages:
 
-```ts
+
 plan;
 saved;
-```
+
 
 and provides functions such as:
 
-```ts
+
 addToPlan();
 removeFromPlan();
 saveWorkout();
@@ -419,7 +419,7 @@ removeFromSaved();
 markAsDone();
 isInPlan();
 isSaved();
-```
+
 
 This allows the Navbar, workout details, and My Plan page to share the same workout state.
 
@@ -431,16 +431,16 @@ FitLog stores user selections in the browser.
 
 The following keys are used:
 
-```text
+
 fitlog-plan
 fitlog-saved
-```
+
 
 Example:
 
-```ts
+
 localStorage.setItem("fitlog-plan", JSON.stringify(plan));
-```
+
 
 This allows the user's plan and saved workouts to remain after a browser refresh.
 
@@ -452,30 +452,30 @@ The My Plan page calculates three live metrics.
 
 ### Exercises
 
-```text
+
 Number of workouts in today's plan
-```
+
 
 ### Minutes
 
-```text
+
 Sum of workout durations
-```
+
 
 ### Calories
 
-```text
+
 Sum of calories burned
-```
+
 
 For example:
 
-```ts
+
 const minutes = workouts.reduce(
   (total, workout) => total + workout.duration,
   0,
 );
-```
+
 
 ---
 
@@ -485,9 +485,9 @@ A maximum of **5 workouts** can be added to today's plan.
 
 If the user tries to add a sixth workout, FitLog displays a toast notification instead of adding it.
 
-```text
+
 Today's plan can contain only 5 lifts.
-```
+
 
 ---
 
@@ -497,21 +497,21 @@ FitLog uses a dark gym-focused visual style.
 
 ### Main Background
 
-```text
+
 #0B0B0B
-```
+
 
 ### Card Background
 
-```text
+
 #151515
-```
+
 
 ### Accent Color
 
-```text
+
 #CCFF00
-```
+
 
 The lime accent is used for:
 
@@ -556,35 +556,35 @@ The interface uses Tailwind CSS responsive utilities.
 
 ### 1. Clone the repository
 
-```bash
+
 git clone YOUR_GITHUB_REPOSITORY_URL
-```
+
 
 ### 2. Go to the project directory
 
-```bash
+
 cd fitlog
-```
+
 
 ### 3. Install dependencies
 
-```bash
+
 npm install
-```
+
 
 ### 4. Start the development server
 
-```bash
+
 npm run dev
-```
+
 
 ### 5. Open the application
 
 Visit:
 
-```text
+
 http://localhost:3000
-```
+
 
 ---
 
@@ -592,17 +592,15 @@ http://localhost:3000
 
 To create a production build:
 
-```bash
+
 npm run build
-```
+
 
 To start the production server:
 
-```bash
-npm start
-```
 
-Before deployment, make sure the production build completes without errors.
+npm start
+
 
 ---
 
@@ -611,10 +609,7 @@ Before deployment, make sure the production build completes without errors.
 FitLog can be deployed using platforms such as:
 
 - Vercel
-- Netlify
-- Cloudflare Pages
 
-For a Next.js application, Vercel is the recommended deployment option.
 
 After deployment, test:
 
@@ -633,7 +628,7 @@ After deployment, test:
 
 ## 🔄 User Flow
 
-```text
+
 Home
  │
  ├── Browse Workout Library
@@ -659,7 +654,7 @@ Home
    ┌───┴────┐
    ▼        ▼
 Mark Done  Remove
-```
+
 
 ---
 
@@ -669,14 +664,14 @@ React Toastify is used to provide immediate feedback after user actions.
 
 Examples:
 
-```text
+
 Added to today's plan
 Workout saved for later
 Workout removed from today's plan
 Workout marked as done
 Workout is already in today's plan
 Today's plan can contain only 5 lifts.
-```
+
 
 ---
 
@@ -688,7 +683,7 @@ Because Next.js `Image` is used for remote images, the required image host is co
 
 Example configuration:
 
-```ts
+
 images: {
   remotePatterns: [
     {
@@ -697,7 +692,7 @@ images: {
     },
   ],
 },
-```
+
 
 ---
 
