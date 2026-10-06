@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Image */}
           <div className="relative w-full max-w-lg overflow-hidden rounded-2xl">
             <Image
-              src="/public/images/banner.png"
+              src="/images/banner.png"
               alt="FitLog workout"
               width={700}
               height={700}
